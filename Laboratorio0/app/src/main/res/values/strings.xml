@@ -3,4 +3,8 @@
     <string name="editTextCancion">Buscar por cancion</string>
     <string name="btnBuscar">Buscar</string>
     <string name="btnCrearPlaylist">Crear Playlist</string>
+    <string name="rBtnAgregar">Agregar a playlist</string>
+    <string name="TextViewNombre">Nombre</string>
+    <string name="TextViewAlbum">Album</string>
+    <string name="TextViewDuracion">Duracion</string>
 </resources>
