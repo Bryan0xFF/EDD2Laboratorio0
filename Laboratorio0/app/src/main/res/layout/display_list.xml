@@ -34,7 +34,7 @@
         app:layout_constraintGuide_begin="333dp" />
 
     <TextView
-        android:id="@+id/textViewNombre"
+        android:id="@+id/textViewNombreDic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -49,7 +49,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewAlbum"
+        android:id="@+id/textViewAlbumDic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -64,7 +64,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <TextView
-        android:id="@+id/textViewDuracion"
+        android:id="@+id/textViewDuracionDic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -80,7 +80,7 @@
         app:layout_constraintVertical_bias="0.487" />
 
     <RatingBar
-        android:id="@+id/ratingBarCalificacion"
+        android:id="@+id/ratingBarCalificacionDic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
