@@ -33,8 +33,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         StartArray();
 
-        //TODO: buscar por nombre (usar trim)
-        //TODO: crear playlist
+        //TODO: buscar por nombre (usar trim)-> Alex
+        //TODO: crear playlist -> Bryan
 
     }
 
