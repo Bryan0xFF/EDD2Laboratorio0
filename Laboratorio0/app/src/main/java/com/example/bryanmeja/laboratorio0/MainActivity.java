@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.bryanmeja.laboratorio0.models.Cancion;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,9 +24,10 @@ public class MainActivity extends AppCompatActivity {
     public static Map<String,Cancion> canciones = new ArrayMap<>();
     Button btnBuscar;
     Button btnCreatePlaylist;
+    Button btnGoToPlaylist;
     EditText etBuscar;
     String searchedSong =  "";
-
+    ArrayList<Cancion> Canciones = new ArrayList<>();
     private display_listAdapter displayAdapter;
 
     @Override
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         btnBuscar = findViewById(R.id.btnBuscar);
         etBuscar = (EditText) findViewById(R.id.editText);
         btnCreatePlaylist = findViewById(R.id.btnCrearPlaylist);
+        btnGoToPlaylist = findViewById(R.id.btnVerPL);
         StartArray();
 
         //TODO: buscar por nombre (usar trim)-> Alex
@@ -114,6 +117,19 @@ public class MainActivity extends AppCompatActivity {
         etBuscar.setText("");
         displayAdapter = new display_listAdapter(this,canciones);
         listaCanciones.setAdapter(displayAdapter);
+    }
+
+    public void goToPlaylist(View v) {
+        btnGoToPlaylist =(Button) findViewById(R.id.btnVerPL);
+
+        btnGoToPlaylist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent agregar = new Intent(MainActivity.this, Main3Activity.class);
+                startActivity(agregar);
+            }
+        });
+
     }
 
 }
