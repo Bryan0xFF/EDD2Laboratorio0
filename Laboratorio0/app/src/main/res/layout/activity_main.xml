@@ -9,57 +9,58 @@
     <ListView
         android:id="@+id/lvPlaylist"
         android:layout_width="match_parent"
-        android:layout_height="312dp">
+        android:layout_height="298dp"
+        android:layout_marginBottom="196dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp">
 
     </ListView>
-
-    <EditText
-        android:id="@+id/editTextCancion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="@string/editTextCancion"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lvPlaylist"
-        app:layout_constraintVertical_bias="0.094"
-        />
 
     <Button
         android:id="@+id/btnBuscar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginBottom="132dp"
+        android:layout_marginEnd="64dp"
         android:text="@string/btnBuscar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.836"
-        app:layout_constraintStart_toEndOf="@+id/editTextCancion" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnCrearPlaylist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
         android:text="@string/btnCrearPlaylist"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.034"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCancion"
-        app:layout_constraintVertical_bias="0.411" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="128dp"
+        android:layout_marginStart="16dp"
+        android:ems="10"
+        android:hint="Buscar canción"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="41dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="132dp"
+        android:layout_marginEnd="16dp"
+        android:onClick="cancelButton"
+        android:text="X"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>

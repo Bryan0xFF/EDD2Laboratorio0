@@ -13,4 +13,13 @@ public class Cancion {
         this.duracion = duracion;
         this.rating = Integer.parseInt(rating); //rating es de 1-10
     }
+
+    public Cancion(){
+
+        this.nombre = "";
+        this.album = "";
+        this.duracion = "";
+        this.rating = 0;
+    }
+
 }

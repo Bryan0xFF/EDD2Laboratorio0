@@ -22,25 +22,22 @@ public class MainActivity extends AppCompatActivity {
     private ListView listaCanciones;
     public static Map<String,Cancion> canciones = new ArrayMap<>();
     Button btnBuscar;
-    EditText editTextBuscar;
     Button btnCreatePlaylist;
+    EditText etBuscar;
+    String searchedSong =  "";
 
     private display_listAdapter displayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        btnBuscar = findViewById(R.id.btnBuscar);
-        editTextBuscar = findViewById(R.id.editTextCancion);
-        btnCreatePlaylist = findViewById(R.id.btnCrearPlaylist);
-
-
-
         //Intent a;
         //a = new Intent(this,display_listAdapter.class);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        btnBuscar = findViewById(R.id.btnBuscar);
+        etBuscar = (EditText) findViewById(R.id.editText);
+        btnCreatePlaylist = findViewById(R.id.btnCrearPlaylist);
         StartArray();
 
         //TODO: buscar por nombre (usar trim)-> Alex
@@ -83,6 +80,30 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchedSong = etBuscar.getText().toString();
 
+                if(canciones.containsKey(searchedSong)) {
+                    Map<String,Cancion> selectedSong = new ArrayMap<>();
+                    Cancion song = new Cancion();
+                    song = canciones.get(searchedSong);
+                    selectedSong.put(song.nombre, song);
+                    displayAdapter = new display_listAdapter(MainActivity.this,selectedSong);
+                    listaCanciones.setAdapter(displayAdapter);
+                }
+                else {
+                    Toast.makeText(MainActivity.this,"La canción solicitada no está dentro de la biblioteca",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
+
+    public void cancelButton(View v) {
+        etBuscar.setText("");
+        displayAdapter = new display_listAdapter(this,canciones);
+        listaCanciones.setAdapter(displayAdapter);
+    }
+
 }
