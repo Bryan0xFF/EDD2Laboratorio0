@@ -12,6 +12,7 @@ import android.widget.Toast;
 import com.example.bryanmeja.laboratorio0.models.Cancion;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import static com.example.bryanmeja.laboratorio0.MainActivity.canciones;
 
@@ -21,7 +22,7 @@ public class Main2Activity extends AppCompatActivity {
     Button addToPlaylist;
     Button goToPlaylist;
     EditText DatosObtain;
-    public static ArrayList<Cancion> Playlist = new ArrayList<>();
+    public static List<Cancion> Playlist = new ArrayList<>();
     private playlist_adapter playlistAdapter;
 
     @Override
@@ -46,7 +47,9 @@ public class Main2Activity extends AppCompatActivity {
                   Toast.makeText(Main2Activity.this,"No se ha ingresado nada",
                           Toast.LENGTH_SHORT).show();
               }else if(canciones.containsKey(DatosObtain.getText().toString().trim()) == true){
-                    Playlist.add(canciones.get(DatosObtain.getText()));
+                    Playlist.add(MainActivity.canciones.get(DatosObtain.getText().toString().trim()));
+                    Toast.makeText(Main2Activity.this, "Datos guardados",
+                            Toast.LENGTH_SHORT).show();
               }else{
                   Toast.makeText(Main2Activity.this,"Datos incorrectos",
                           Toast.LENGTH_SHORT).show();

@@ -12,14 +12,15 @@ import android.widget.TextView;
 import com.example.bryanmeja.laboratorio0.models.Cancion;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class playlistUI_Adapter extends BaseAdapter {
 
     Activity context;
     private static LayoutInflater inflater = null;
-    ArrayList<Cancion> Playlist;
+    List<Cancion> Playlist;
 
-    public playlistUI_Adapter(Activity context, ArrayList<Cancion> Playlist){
+    public playlistUI_Adapter(Activity context, List<Cancion> Playlist){
         this.Playlist = Playlist;
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
@@ -43,13 +44,13 @@ public class playlistUI_Adapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         //TODO: probar en Main3Activity
         View itemView = convertView;
-        itemView =(convertView == null)? inflater.inflate(R.layout.display_list,null):itemView;
+        itemView =(convertView == null)? inflater.inflate(R.layout.add_playlist,null):itemView;
 
         TextView nombre = itemView.findViewById(R.id.textViewNombre);
         TextView album = itemView.findViewById(R.id.textViewAlbum);
         TextView duracion = itemView.findViewById(R.id.textViewDuracion);
         RatingBar rating = itemView.findViewById(R.id.ratingBarCalificacion);
-        Cancion actual = (Cancion) this.getItem(position);
+        Cancion actual = Playlist.get(position);
         nombre.setText(actual.nombre);
         album.setText(actual.album);
         duracion.setText(actual.duracion);
