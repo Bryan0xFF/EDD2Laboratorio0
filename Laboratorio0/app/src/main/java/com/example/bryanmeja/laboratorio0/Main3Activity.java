@@ -10,6 +10,8 @@ import android.widget.ListView;
 import com.example.bryanmeja.laboratorio0.models.Cancion;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main3Activity extends AppCompatActivity {
@@ -25,8 +27,6 @@ public class Main3Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
         Start3();
-
-
     }
 
     public void Start3(){
@@ -42,6 +42,50 @@ public class Main3Activity extends AppCompatActivity {
             }
         });
 
+        Adapter = new playlistUI_Adapter(Main3Activity.this,this.Playlist);
+        lvPlay.setAdapter(Adapter);
+    }
+
+    public void sortDuracionAscending(View v) {
+        Collections.sort(Playlist, new Comparator<Cancion>() {
+            @Override
+            public int compare(Cancion song1, Cancion song2) {
+                return song1.duracion.compareTo(song2.duracion);
+            }
+        });
+        Adapter = new playlistUI_Adapter(Main3Activity.this,this.Playlist);
+        lvPlay.setAdapter(Adapter);
+    }
+
+    public void sortDuracionDescending(View v) {
+        Collections.sort(Playlist, new Comparator<Cancion>() {
+            @Override
+            public int compare(Cancion song1, Cancion song2) {
+                return song2.duracion.compareTo(song1.duracion);
+            }
+        });
+        Adapter = new playlistUI_Adapter(Main3Activity.this,this.Playlist);
+        lvPlay.setAdapter(Adapter);
+    }
+
+    public void sortNombreAscending(View v) {
+        Collections.sort(Playlist, new Comparator<Cancion>() {
+            @Override
+            public int compare(Cancion song1, Cancion song2) {
+                return song1.nombre.compareTo(song2.nombre);
+            }
+        });
+        Adapter = new playlistUI_Adapter(Main3Activity.this,this.Playlist);
+        lvPlay.setAdapter(Adapter);
+    }
+
+    public void sortNombreDescending(View v) {
+        Collections.sort(Playlist, new Comparator<Cancion>() {
+            @Override
+            public int compare(Cancion song1, Cancion song2) {
+                return song2.nombre.compareTo(song1.nombre);
+            }
+        });
         Adapter = new playlistUI_Adapter(Main3Activity.this,this.Playlist);
         lvPlay.setAdapter(Adapter);
     }
