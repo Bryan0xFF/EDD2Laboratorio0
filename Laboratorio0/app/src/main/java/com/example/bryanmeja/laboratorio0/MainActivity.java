@@ -68,6 +68,16 @@ public class MainActivity extends AppCompatActivity {
                 "Epica vs Attack On Titan".trim(),"5:42","10"));
         canciones.put("Hola Mundo".trim(), new Cancion("Hola Mundo","Android","1:30",
                 "3"));
+        canciones.put("Animals".trim(), new Cancion("Animals","V","3:30",
+                "4"));
+        canciones.put("ASOT 301".trim(), new Cancion("ASOT 301","Armin van Buuren","5:00",
+                "5"));
+        canciones.put("How".trim(), new Cancion("How","Overexposed","3:21",
+                "4"));
+        canciones.put("Yellow submarine".trim(), new Cancion("Yellow submarine","Beatles","5:21",
+                "5"));
+        canciones.put("Cold".trim(), new Cancion("Cold","Maroon5","2:44",
+                "3"));
 
         displayAdapter = new display_listAdapter(this,canciones);
         listaCanciones.setAdapter(displayAdapter);
