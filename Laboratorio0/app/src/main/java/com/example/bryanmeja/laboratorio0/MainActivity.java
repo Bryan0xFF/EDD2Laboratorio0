@@ -1,5 +1,7 @@
 package com.example.bryanmeja.laboratorio0;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.ArrayMap;
@@ -18,9 +20,10 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     private ListView listaCanciones;
-    private Map<String,Cancion> canciones = new ArrayMap<>();
+    public static Map<String,Cancion> canciones = new ArrayMap<>();
     Button btnBuscar;
     EditText editTextBuscar;
+    Button btnCreatePlaylist;
 
     private display_listAdapter displayAdapter;
 
@@ -29,6 +32,13 @@ public class MainActivity extends AppCompatActivity {
 
         btnBuscar = findViewById(R.id.btnBuscar);
         editTextBuscar = findViewById(R.id.editTextCancion);
+        btnCreatePlaylist = findViewById(R.id.btnCrearPlaylist);
+
+
+
+        //Intent a;
+        //a = new Intent(this,display_listAdapter.class);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         StartArray();
@@ -38,8 +48,18 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     public void StartArray(){
         listaCanciones = findViewById(R.id.lvPlaylist);
+        btnCreatePlaylist =(Button) findViewById(R.id.btnCrearPlaylist);
+
+        btnCreatePlaylist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent agregar = new Intent(MainActivity.this, Main2Activity.class);
+                startActivity(agregar);
+            }
+        });
 
         canciones.put("La buena y la mala".trim(),new Cancion("La buena y la mala",
                 "Saber","3:30","4"));
@@ -62,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.LENGTH_LONG).show();
             }
         });
+
 
     }
 }

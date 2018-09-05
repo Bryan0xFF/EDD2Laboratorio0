@@ -7,4 +7,5 @@
     <string name="TextViewNombre">Nombre</string>
     <string name="TextViewAlbum">Album</string>
     <string name="TextViewDuracion">Duracion</string>
+    <string name="btnCrearPlaylist2">Crear</string>
 </resources>
