@@ -29,6 +29,8 @@ public class display_listAdapter extends BaseAdapter {
         this.context = context;
         this.canciones = canciones;
         temp = new ArrayList<>(canciones.keySet());
+
+
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
     }
