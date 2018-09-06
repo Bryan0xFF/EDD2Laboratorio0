@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         btnBuscar = findViewById(R.id.btnBuscar);
         etBuscar = (EditText) findViewById(R.id.editText);
         btnCreatePlaylist = findViewById(R.id.btnCrearPlaylist);
-        btnGoToPlaylist = findViewById(R.id.btnVerPL);
+        btnGoToPlaylist =(Button) findViewById(R.id.btnVerPL);
         StartArray();
 
         //TODO: buscar por nombre (usar trim)-> Alex
@@ -111,16 +111,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    public void cancelButton(View v) {
-        etBuscar.setText("");
-        displayAdapter = new display_listAdapter(this,canciones);
-        listaCanciones.setAdapter(displayAdapter);
-    }
-
-    public void goToPlaylist(View v) {
-        btnGoToPlaylist =(Button) findViewById(R.id.btnVerPL);
 
         btnGoToPlaylist.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,7 +119,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(agregar);
             }
         });
+    }
 
+    public void cancelButton(View v) {
+        etBuscar.setText("");
+        displayAdapter = new display_listAdapter(this,canciones);
+        listaCanciones.setAdapter(displayAdapter);
     }
 
 }
